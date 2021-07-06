@@ -4,8 +4,19 @@ h1 {
 }
 
 .job-offer {
-    padding: 0 12px;
-    margin-bottom: 24px;
+    background-color: #f1f1f1;
+    padding: 12px;
+    margin-bottom: 12px;
+    list-style: none;
+    border-radius: 12px;
+}
+
+.starred {
+    background-color: #ffff99;
+}
+
+.applied {
+    background-color: #c0ffc0;
 }
 
 li img {
@@ -29,11 +40,11 @@ li img {
 }
 
 .job-offer i:hover {
-    color: yellow;
+    color: orange;
 }
 
-i.starred {
-    color: yellow;
+.starred i {
+    color: orange;
     font-weight: bold;
 }
 

@@ -17,14 +17,14 @@
                 <div class="col-4">
                     <h1>JOB POSITIONS</h1>
                     <ul>
-                        <li class="job-offer" v-for="(job, index) in jobs">
+                        <li class="job-offer" :class="[starredJobs(job.id), appliedJobs(job.id)]" v-for="(job, index) in jobs">
                             <div class="d-flex">
                                 <div>
                                     <img :src="job.logo" alt="company logo">
                                     <span><span class="company-name">Company name: {{job.company}}</span> - <span class="post-date">Announcement posted on {{job.created_at}}</span>
                                 </div>
 
-                                <i v-if="!applied.includes(job.id)" class="far fa-star align-self-center" :class="starredJobs(job.id)" @click="addAndRemoveToStarred(job.id)"></i>
+                                <i v-if="!applied.includes(job.id)" class="far fa-star align-self-center" @click="addAndRemoveToStarred(job.id)"></i>
                             </div>
 
                             <ul>
@@ -35,7 +35,7 @@
 
                             <div class="apply-container">
                                 <div v-if="!applied.includes(job.id)" class="apply d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary" @click="addToApplied(job.id)">Apply for this job</button>
+                                    <button type="button" class="btn btn-outline-danger" @click="addToApplied(job.id)">Apply for this job</button>
                                 </div>
                                 
                                 <div v-if="applied.includes(job.id)" class="apply d-flex justify-content-center">
@@ -49,14 +49,14 @@
                 <div class="col-4">
                     <h1>STARRED</h1>
                     <ul>
-                        <li class="job-offer" v-for="job in starredJobsList()">
+                        <li class="job-offer" :class="starredJobs(job.id)" v-for="job in starredJobsList()">
                             <div class="d-flex">
                                 <div>
                                     <img :src="job.logo" alt="company logo">
                                     <span><span class="company-name">Company name: {{job.company}}</span> - <span class="post-date">Announcement posted on {{job.created_at}}</span>
                                 </div>
                             
-                                <i class="far fa-star align-self-center" :class="starredJobs(job.id)" @click="addAndRemoveToStarred(job.id)"></i>
+                                <i class="far fa-star align-self-center" @click="addAndRemoveToStarred(job.id)"></i>
                             </div>
 
                             <ul>
@@ -67,7 +67,7 @@
 
                             <div class="apply-container">
                                 <div v-if="!applied.includes(job.id)" class="apply d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary" @click="addToApplied(job.id)">Apply for this job</button>
+                                    <button type="button" class="btn btn-outline-danger" @click="addToApplied(job.id)">Apply for this job</button>
                                 </div>
                             
                                 <div v-if="applied.includes(job.id)" class="apply d-flex justify-content-center">
@@ -81,7 +81,7 @@
                 <div class="col-4">
                     <h1>APPLIED</h1>
                     <ul>
-                        <li class="job-offer" v-for="job in appliedJobsList()">
+                        <li class="job-offer" :class="appliedJobs(job.id)" v-for="job in appliedJobsList()">
                             <img :src="job.logo" alt="company logo">
                             <span><span class="company-name">Company name: {{job.company}}</span> - <span class="post-date">Announcement posted on {{job.created_at}}</span>
 

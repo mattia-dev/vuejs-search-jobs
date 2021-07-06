@@ -93,6 +93,11 @@ new Vue(
                 });
                 return starredJobsArray;
             },
+            appliedJobs: function (id) {
+                if (this.applied.includes(id)) {
+                    return "applied";
+                }
+            },
             addToApplied: function(id) {
                 if (!this.applied.includes(id)) {
                     this.applied.push(id);
