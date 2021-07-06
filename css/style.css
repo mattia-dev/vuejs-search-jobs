@@ -3,6 +3,10 @@ h1 {
     margin-bottom: 24px;
 }
 
+.job-offer {
+    padding: 0 12px;
+}
+
 li img {
     height: 22px;
 }
@@ -14,6 +18,17 @@ li img {
 
 .post-date {
     font-style: italic;
+}
+
+.job-offer i {
+    cursor: pointer;
+    font-size: 20px;
+    color: grey;
+}
+
+i.starred {
+    color: yellow;
+    font-weight: bold;
 }
 
 .job-spec {

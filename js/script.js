@@ -66,12 +66,16 @@ new Vue(
                     contract: 'Part Time'
                 },
             ],
-            starred: [2, 4, 5],
-            applied: [0, 3]
+            starred: [2, 3, 6],
+            applied: [1, 5]
         },
 
         methods: {
-
+            starredJobs: function(id) {
+                if (this.starred.includes(id)) {
+                    return "starred";
+                }
+            }
         }
     }
 )
