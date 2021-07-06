@@ -67,7 +67,8 @@ new Vue(
                 },
             ],
             starred: [2, 3, 6],
-            applied: [1, 5]
+            applied: [1, 5],
+            // starredJobsList: []
         },
 
         methods: {
@@ -76,8 +77,22 @@ new Vue(
                     return "starred";
                 }
             },
-            addToStarred: function(id) {
-                this.starred.push(id);
+            addAndRemoveToStarred: function(id) {
+                if (!this.starred.includes(id)) {
+                    this.starred.push(id);
+                } else {
+                    let index = this.starred.indexOf(id);
+                    this.starred.splice(index, 1);
+                }
+            },
+            starredJobsList: function() {
+                let starredJobsArray = [];
+                this.jobs.forEach(job => {
+                    if (this.starred.includes(job.id)) {
+                        starredJobsArray.push(job);
+                    }
+                });
+                return starredJobsArray;
             }
         }
     }

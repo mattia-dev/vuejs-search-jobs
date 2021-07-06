@@ -24,7 +24,7 @@
                                     <span><span class="company-name">Company name: {{job.company}}</span> - <span class="post-date">Announcement posted on {{job.created_at}}</span>
                                 </div>
 
-                                <i class="far fa-star align-self-center" :class="starredJobs(job.id)" @click="addToStarred(job.id)"></i>
+                                <i class="far fa-star align-self-center" :class="starredJobs(job.id)" @click="addAndRemoveToStarred(job.id)"></i>
                             </div>
                             <ul>
                                 <li><span class="job-spec">Position available:</span> {{job.position}} - {{job.contract}}</li>
@@ -38,7 +38,7 @@
                 <div class="col-4">
                     <h1>STARRED</h1>
                     <ul>
-                        <li class="job-offer" v-for="job in jobs">
+                        <li class="job-offer" v-for="job in starredJobsList()">
                             <div class="d-flex">
                                 <div>
                                     <img :src="job.logo" alt="company logo">
