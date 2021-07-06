@@ -96,6 +96,8 @@ new Vue(
             addToApplied: function(id) {
                 if (!this.applied.includes(id)) {
                     this.applied.push(id);
+                    let index = this.starred.indexOf(id);
+                    this.starred.splice(index, 1);
                 }
             },
             appliedJobsList: function() {
