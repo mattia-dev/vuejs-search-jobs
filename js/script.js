@@ -68,6 +68,7 @@ new Vue(
             ],
             starred: [2, 3, 6],
             applied: [2, 5],
+            modalStatus: false
         },
 
         methods: {
@@ -106,6 +107,7 @@ new Vue(
                         this.starred.splice(index, 1);
                     }
                 }
+                this.displayModal();
             },
             appliedJobsList: function() {
                 let appliedJobsArray = [];
@@ -115,6 +117,14 @@ new Vue(
                     }
                 });
                 return appliedJobsArray;
+            },
+            displayModal: function() {
+                setTimeout(() => {
+                    this.modalStatus = true;
+                }, 1000);
+                setTimeout(() => {
+                    this.modalStatus = false;
+                }, 3000);
             }
         }
     }
