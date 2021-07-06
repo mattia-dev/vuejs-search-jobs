@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+li img {
+    height: 22px;
+}
+
+.company-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.post-date {
+    font-style: italic;
+}
+
+.job-spec {
+    font-weight: bold;
+}

@@ -12,7 +12,54 @@
 </head>
 <body>
     <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h1>JOB POSITIONS</h1>
+                    <ul>
+                        <li v-for="job in jobs">
+                            <img :src="job.logo" alt="company logo">
+                            <span><span class="company-name">Company name: {{job.company}}</span> - <span class="post-date">Announcement posted on {{job.created_at}}</span>
+                            <ul>
+                                <li><span class="job-spec">Position available:</span> {{job.position}} - {{job.contract}}</li>
+                                <li><span class="job-spec">Job description:</span> {{job.description}}</li>
+                                <li><span class="job-spec">Location:</span> {{job.city}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="col-4">
+                    <h1>STARRED</h1>
+                    <ul>
+                        <li v-for="job in jobs">
+                            <img :src="job.logo" alt="company logo">
+                            <span><span class="company-name">Company name: {{job.company}}</span> - <span class="post-date">Announcement posted on {{job.created_at}}</span>
+                            <ul>
+                                <li><span class="job-spec">Position available:</span> {{job.position}} - {{job.contract}}</li>
+                                <li><span class="job-spec">Job description:</span> {{job.description}}</li>
+                                <li><span class="job-spec">Location:</span> {{job.city}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-4">
+                    <h1>APPLIED</h1>
+                    <ul>
+                        <li v-for="job in jobs">
+                            <img :src="job.logo" alt="company logo">
+                            <span><span class="company-name">Company name: {{job.company}}</span> - <span class="post-date">Announcement posted on {{job.created_at}}</span>
+                            <ul>
+                                <li><span class="job-spec">Position available:</span> {{job.position}} - {{job.contract}}</li>
+                                <li><span class="job-spec">Job description:</span> {{job.description}}</li>
+                                <li><span class="job-spec">Location:</span> {{job.city}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script src="./js/script.js"></script>
