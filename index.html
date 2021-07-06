@@ -46,7 +46,7 @@
                                             posted on {{job.created_at}}</span>
                                 </div>
                             
-                                <i class="far fa-star align-self-center" :class="starredJobs()"></i>
+                                <i class="far fa-star align-self-center" :class="starredJobs(job.id)" @click="addAndRemoveToStarred(job.id)"></i>
                             </div>
                             <ul>
                                 <li><span class="job-spec">Position available:</span> {{job.position}} - {{job.contract}}</li>
