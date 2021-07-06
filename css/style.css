@@ -5,6 +5,7 @@ h1 {
 
 .job-offer {
     padding: 0 12px;
+    margin-bottom: 24px;
 }
 
 li img {
@@ -38,4 +39,8 @@ i.starred {
 
 .job-spec {
     font-weight: bold;
+}
+
+.apply {
+    margin-top: 12px;
 }
