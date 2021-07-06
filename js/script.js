@@ -87,7 +87,7 @@ new Vue(
             starredJobsList: function() {
                 let starredJobsArray = [];
                 this.jobs.forEach(job => {
-                    if (this.starred.includes(job.id)) {
+                    if (this.starred.includes(job.id) && !this.applied.includes(job.id)) {
                         starredJobsArray.push(job);
                     }
                 });
@@ -96,8 +96,10 @@ new Vue(
             addToApplied: function(id) {
                 if (!this.applied.includes(id)) {
                     this.applied.push(id);
-                    let index = this.starred.indexOf(id);
-                    this.starred.splice(index, 1);
+                    if (this.starred.includes(id)) {
+                        let index = this.starred.indexOf(id);
+                        this.starred.splice(index, 1);
+                    }
                 }
             },
             appliedJobsList: function() {
