@@ -75,6 +75,9 @@ new Vue(
                 if (this.starred.includes(id)) {
                     return "starred";
                 }
+            },
+            addToStarred: function(id) {
+                this.starred.push(id);
             }
         }
     }
