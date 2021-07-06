@@ -33,8 +33,14 @@
                                 <li><span class="job-spec">Location:</span> {{job.city}}</li>
                             </ul>
 
-                            <div class="apply d-flex justify-content-center">
-                                <button type="button" class="btn btn-primary" @click="addToApplied(job.id)">Apply for this job</button>
+                            <div class="apply-container">
+                                <div v-if="!applied.includes(job.id)" class="apply d-flex justify-content-center">
+                                    <button type="button" class="btn btn-primary" @click="addToApplied(job.id)">Apply for this job</button>
+                                </div>
+                                
+                                <div v-if="applied.includes(job.id)" class="apply d-flex justify-content-center">
+                                    <div class="applied-badge">APPLIED</div>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -59,8 +65,14 @@
                                 <li><span class="job-spec">Location:</span> {{job.city}}</li>
                             </ul>
 
-                            <div class="apply d-flex justify-content-center">
-                                <button type="button" class="btn btn-primary" @click="addToApplied(job.id)">Apply for this job</button>
+                            <div class="apply-container">
+                                <div v-if="!applied.includes(job.id)" class="apply d-flex justify-content-center">
+                                    <button type="button" class="btn btn-primary" @click="addToApplied(job.id)">Apply for this job</button>
+                                </div>
+                            
+                                <div v-if="applied.includes(job.id)" class="apply d-flex justify-content-center">
+                                    <div class="applied-badge">APPLIED</div>
+                                </div>
                             </div>
                         </li>
                     </ul>

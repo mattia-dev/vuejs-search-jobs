@@ -41,6 +41,18 @@ i.starred {
     font-weight: bold;
 }
 
-.apply {
+.apply-container {
     margin-top: 12px;
+}
+
+.applied-badge {
+    width: 147.65px;
+    height: 38px;
+    background-color: #198754;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 38px;
+    border-radius: .25rem;
 }

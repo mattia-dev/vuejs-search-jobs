@@ -67,7 +67,7 @@ new Vue(
                 },
             ],
             starred: [2, 3, 6],
-            applied: [1, 5],
+            applied: [2, 5],
         },
 
         methods: {
@@ -93,12 +93,12 @@ new Vue(
                 });
                 return starredJobsArray;
             },
-            addToApplied: function (id) {
+            addToApplied: function(id) {
                 if (!this.applied.includes(id)) {
                     this.applied.push(id);
                 }
             },
-            appliedJobsList: function () {
+            appliedJobsList: function() {
                 let appliedJobsArray = [];
                 this.jobs.forEach(job => {
                     if (this.applied.includes(job.id)) {
