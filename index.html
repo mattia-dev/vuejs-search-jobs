@@ -12,11 +12,7 @@
     <title>Job Search</title>
 </head>
 <body>
-    <div id="app">
-        <div v-if="modalStatus" class="modal">
-            <div class="modal-content">Candidatura inviata!</div>
-        </div>
-          
+    <div id="app">  
         <div class="container">
             <div class="row">
                 <div class="col-4">
@@ -41,22 +37,14 @@
                             <div class="apply-container">
                                 <div v-if="!applied.includes(job.id)" class="apply d-flex justify-content-center">
                                     <button type="button" class="btn btn-outline-danger" @click="addToApplied(job.id)">Apply for this job</button>
-                                    
-                                    <!-- <div class="modal fade" id="myModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-
-                                                <div class="modal-body">Candidatura inviata!</div>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </div>
                                 
                                 <div v-if="applied.includes(job.id)" class="apply d-flex justify-content-center">
                                     <div class="applied-badge">APPLIED</div>
+                                </div>
+
+                                <div v-if="modalStatus" class="modal">
+                                    <div class="modal-content">Candidatura inviata!</div>
                                 </div>
                             </div>
                         </li>
